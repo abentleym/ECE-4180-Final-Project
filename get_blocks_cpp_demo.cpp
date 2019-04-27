@@ -15,7 +15,6 @@
 
 #include <signal.h>
 #include <iostream>
-#include <iostream>
 #include <fstream>
 #include <string>
 
@@ -23,33 +22,41 @@
 
 Pixy2        pixy;
 static bool  run_flag = true;
+int patternTracking;
 
 
 using namespace std;
 
 class pattern {
-private:
-  int signature;
-  string name;
+private: 
+	int signature;
+	string name;
 public:
     pattern() {
       signature = 00;
       name = "";
     }
-    pattern(int signature) {
-      int rand = rand() % 4;
-      signature = signature;
-      /*switch rand {
+    pattern(string givenName, int sig) {
+		name = givenName;
+		signature = sig;
+	}
+    pattern(int sig) {
+      int ran = rand() % 4;
+      signature = sig;
+	
+      switch (patternTracking) {
         case 0:
-          name = "Jeff"
+          name = "Jeff";
         case 1:
-          name = "Andrew"
+          name = "Andrew";
         case 2:
-          name = "John"
+          name = "John";
         case 3:
-          name = "Casey"
-      }*/
-      name = "Jeff";
+          name = "Will";
+        case 4: 
+         name = "Bob";
+         
+      }
     }
     string getName() {
       return name;
@@ -57,8 +64,9 @@ public:
     int getSignature() {
       return signature;
     }
-}
+};
 
+pattern patternArray[4];
 
 
 string readlineFile(string filename) {
@@ -88,40 +96,100 @@ void writeResponsetoFile(string filename, string Response) {
 	}
 	
 }
-string stateOne() {
+string running() {
 	  pixy.ccc.getBlocks(128);
-	  if (pixy.ccc.numBlocks) {
+	  if (pixy.ccc.numBlocks) {  //first line, if there are no blocks, no recongiziton 
 		pixy.ccc.blocks[0].print(); //current signature is saved to CurrentColorCode.txt in print()
-		  return "Yes";  
+		  return "Yes";   
 	  } else {
-		  return "NO";
+		  writeResponsetoFile("CurrentColorCode.txt","0 0");
+		  return "NO"; 
 	  }
 	  
 	  
 }
-void printSignatureToFile() {
-	string age;
-	string signature;
+int getActivieSignature() {
+	int age;
+	int signature;
 	string line;
 	int ageLocation;
 	
 	
-	
+	//run running on a thread and added a mutex lock right here. 
 	line = readlineFile("CurrentColorCode.txt");
 	ageLocation= line.find(" ");
 	
 	age= stoi(line.substr(ageLocation+1));
-	signature= line.substr(0 , ageLocation);
-	cout << "Age is " << age <<  endl;
-	cout << "Siganture is " << signature << endl;
-	cout << "age int?" << isdigit(age) << endl; 
+	signature=stoi( line.substr(0 , ageLocation));
 	
-	if (age > 4) {
-		writeResponsetoFile("DetectedObj.txt", signature); //detectedobject's name is printed to DetectedObj.txt
-	}
-	
-  
+	return signature;
+	//if (age > 4) {
+		//pattern cc(signature);	
+		//writeResponsetoFile("DetectedObj.txt", cc.getName()); //detectedobject's name is printed to DetectedObj.txt
+	//} else {
+					
+}
+string getUserCommand() {
+	string command;
+	command = readlineFile("voiceCommand.txt");
+	return command;
+}
+bool comeparePatternStateOne(int ActivieSignature) { // pass getActivieSignature() 
+	for(int i =0; i <= patternTracking; i++) {
+		if(patternArray[i].getSignature() == ActivieSignature){
+			string respond = "Yes I recongized " + patternArray[i].getName();
+			
+			writeResponsetoFile("pixyResponse.txt", respond);//need aa file name to pass detected objects name 
+			
+			return true;
+		} else{
+			string response = "No Pattern is not in my database";
+			patternArray[patternTracking] = pattern(ActivieSignature);
+			
+			response+=" but I will save pattern and name it " + patternArray[patternTracking].getName(); 
+			writeResponsetoFile("pixyResponse.txt", response);
+			patternTracking++;
+			
+			return false;
+		}
+	}	 
+} 
+bool comparePattern(int ActivieSig) {
+	for(int i =0; i <= patternTracking; i++) {
+		if(patternArray[i].getSignature() == ActivieSig){
+			string respond = "Yes I know " + patternArray[i] .getName();
+			
+			writeResponsetoFile("pixyResponse.txt", respond);//need aa file name to pass detected objects name 
+			
+			return true;
+		} else{
+			string response = "No Pattern is not in my database";
+			
+			writeResponsetoFile("pixyResponse.txt", response);
+			
+			return false;
+		}
+	}	
+}
 
+void Setpattern(string name, int ActivieSig) {
+	patternArray[patternTracking]= pattern(name, ActivieSig);
+	
+}
+void robotSetsName(int ActivieSig) {
+	patternArray[patternTracking] = pattern(ActivieSig);
+}
+
+void writeToPiPin() {
+	system("python3 writeToLed.py"); //led goes high for half a second 
+	
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+void sayPixyResponse() {
+	system("su pi python3 -c /home/pi/AIY-voice-kit-python/pixy2/build/get_blocks_cpp_demo/sayPixyResponse.py");
+}
+void userVoiceInput() {
+	system("python3 userVoiceInput.py");
 }
 
 void handle_SIGINT(int unused)
@@ -131,32 +199,10 @@ void handle_SIGINT(int unused)
   run_flag = false;
 }
 
-void  get_blocks()
-{
-  int  Block_Index;
-
-  // Query Pixy for blocks //
-  pixy.ccc.getBlocks(128);
-
-  // Were blocks detected? //
-  if (pixy.ccc.numBlocks)
-  {
-    // Blocks detected - print them! //
-
-    printf ("Detected %d block(s)\n", pixy.ccc.numBlocks);
-
-    for (Block_Index = 0; Block_Index < pixy.ccc.numBlocks; ++Block_Index)
-    {
-      printf ("  Block %d: ", Block_Index + 1);
-      pixy.ccc.blocks[Block_Index].print();
-    }
-  }
-}
 
 int main()
 {
   int  Result;
-  const char *path="/root/hello.txt";
 
   // Catch CTRL+C (SIGINT) signals //
   signal (SIGINT, handle_SIGINT);
@@ -164,8 +210,6 @@ int main()
   printf ("=============================================================\n");
   printf ("= PIXY2 Get Blocks Demo                                     =\n");
   printf ("=============================================================\n");
-
-  printf ("Connecting to Pixy2...");
 
   // Initialize Pixy2 Connection //
   {
@@ -181,46 +225,70 @@ int main()
     printf ("Success\n");
   }
 
-  // Get Pixy2 Version information //
-  {
-    Result = pixy.getVersion();
 
-    if (Result < 0)
-    {
-      printf ("pixy.getVersion() returned %d\n", Result);
-      return Result;
-    }
 
-    pixy.version->print();
-  }
+
 
   // Set Pixy2 to color connected components program //
   pixy.changeProg("color_connected_components");
-  printf ("calling cloud speech...");
-//system("python3 cloudspeech_demo.py");
 
-  //Init pattern
-  pattern patternArray[4];
-  pattern pattern1 = pattern();
-  pattern pattern2 = pattern();
-  pattern pattern3 = pattern();
-  pattern pattern4 = pattern();
-  patternArray[0] = pattern1;
-  patternArray[1] = pattern2;
-  patternArray[2] = pattern3;
-  patternArray[3] = pattern4;
 
+
+
+
+  int s;
+  bool fl =true;
+  
+  string cmd = "begin";
+  //sayPixyResponse();
+  //userVoiceInput();
   while(1)
   {
-    //get_blocks();
-	writeResponsetoFile("ex.txt", stateOne());
+    running();
+    s =getActivieSignature();
+    
+    
+	if ( s > 0 && fl && cmd == "begin") {
+		
+		comeparePatternStateOne(s);
+		cout << "check pixyRespond.txt waiting on you" << endl;
+		sayPixyResponse(); 
+		cin.get();
+		fl =false;
+		userVoiceInput();
+		cmd =getUserCommand();
+	}
+	
+	
+	s=getActivieSignature();
+		
+	if( fl==false && s > 0 && cmd == "know") {
+		s= getActivieSignature();
+		comparePattern(s);
+		sayPixyResponse();
+		cout << "check see if pattern is recongized pixyRespond.txt waiting on you"<< endl;
+		cout<< patternArray[0].getName()<< endl;
+			
+		cin.get();
+	}
+	
+	if(cmd == "turn") {
+		writeToPiPin();
+		cmd = "";
+	}
+	
+	
+	
+	
+	
     if (run_flag == false)
     {
       // Exit program loop //
       break;
     }
   }
-  printSignatureToFile();
 
   printf ("PIXY2 Get Blocks Demo Exit\n");
+    
 }
+
