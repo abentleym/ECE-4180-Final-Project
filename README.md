@@ -1,4 +1,6 @@
-# ECE-4180-Final-Project
+# Pattern Recognition Robot with Voice Control
 # Authors
 Caleb Martinez, Alexander Meyer, and Jongheon Park
-# Pattern Recognition Robot with Voice Control
+# Contents
+[Overview](docs/overview.md)
+
