@@ -7,10 +7,16 @@ Caleb Martinez, Alexander Meyer, and Jongheon Park
 - [State Diagram](README.md#state-diagram)
 - [Running the Code](README.md#running-the-code)
 - [Parts List](README.md#parts-list)
+- [Running the Code](README.md#instruction)
 
 
 # Overview
 This project aims to create a stationary robot that can recognize and save color patterns. It uses a Pixy2 camera to process color recognition and a Raspberry Pi to interface with the Pixy2 and to control the robot's camera rotation.
+
+# State Diagram
+State diagram of the robot
+
+![github-medium](statediagram.jpg)
 
 # Parts List
 Hardware Used
@@ -39,6 +45,4 @@ After obtaining the hardware, follow the instructions that came with each part t
   
 - Running the Code
 
-# State Diagram
-![github-medium](statediagram.jpg)
 
