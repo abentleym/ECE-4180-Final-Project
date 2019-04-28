@@ -4,8 +4,10 @@ ECE 4180 Spring 2019 Final Project
 Caleb Martinez, Alexander Meyer, and Jongheon Park
 # Table of Contents
 - [Overview](README.md#overview)
+- [State Diagram](README.md#state-diagram)
 - [Running the Code](README.md#running-the-code)
 - [Parts List](README.md#parts-list)
+
 
 # Overview
 This project aims to create a stationary robot that can recognize and save color patterns. It uses a Pixy2 camera to process color recognition and a Raspberry Pi to interface with the Pixy2 and to control the robot's camera rotation.
@@ -37,4 +39,6 @@ After obtaining the hardware, follow the instructions that came with each part t
   
 - Running the Code
 
+# State Diagram
+(statediagram.jpg)
 
