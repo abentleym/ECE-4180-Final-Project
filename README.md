@@ -8,6 +8,8 @@ Caleb Martinez, Alexander Meyer, and Jongheon Park
 - [Running the Code](README.md#running-the-code)
 - [Parts List](README.md#parts-list)
 - [Running the Code](README.md#instruction)
+- [Demo Video](README.md#demo-video)
+
 
 
 # Overview
@@ -44,5 +46,7 @@ After obtaining the hardware, follow the instructions that came with each part t
   - https://aiyprojects.withgoogle.com/voice-v1/
   
 - Running the Code
+
+# Demo Video
 
 
