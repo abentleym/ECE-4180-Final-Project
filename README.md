@@ -40,5 +40,5 @@ After obtaining the hardware, follow the instructions that came with each part t
 - Running the Code
 
 # State Diagram
-(statediagram.jpg)
+[github-medium](statediagram.jpg)
 
