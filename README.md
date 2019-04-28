@@ -9,15 +9,28 @@ Caleb Martinez, Alexander Meyer, and Jongheon Park
 # Overview
 This project aims to create a stationary robot that can recognize and save color patterns. It uses a Pixy2 camera to process color recognition and a Raspberry Pi to interface with the Pixy2 and to control the robot's camera rotation.
 
-# Running the Code
-
 # Parts List
 Hardware Used
 - Raspberry Pi
 - Pixy2 Camera
+- AIY Voice Kit (V1)
 
 Software Used
 - Pixymon
 - C++
 - Python 3
 - Google Cloud Voice API
+
+# Instruction
+After obtaining the hardware, follow the instructions that came with each part to setup the environment.
+- Raspberry Pi
+  - https://projects.raspberrypi.org/en/projects/raspberry-pi-getting-started
+  - https://www.raspberrypi.org/help/noobs-setup/2/
+ 
+- Pixy2 Camera
+  - https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:pixy_regular_quick_start
+  - https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:hooking_up_pixy_to_a_raspberry_pi
+
+- AIY Voice Kit (V1)
+  - https://aiyprojects.withgoogle.com/voice-v1/
+
