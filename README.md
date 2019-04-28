@@ -9,3 +9,7 @@ Caleb Martinez, Alexander Meyer, and Jongheon Park
 # Overview
 # Running the Code
 # Parts List
+Parts Used
+- mbed LPC1768
+- Raspberry Pi
+- Pixy2 Camera
