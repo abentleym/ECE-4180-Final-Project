@@ -34,4 +34,7 @@ After obtaining the hardware, follow the instructions that came with each part t
 
 - AIY Voice Kit (V1)
   - https://aiyprojects.withgoogle.com/voice-v1/
+  
+- Running the Code
+
 
