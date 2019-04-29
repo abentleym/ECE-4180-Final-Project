@@ -50,10 +50,10 @@ After obtaining the hardware, follow the instructions that came with each part t
 - Running the Code
   - Building
     - Download the files to a directory and open terminal in that directory
-    - ``` ./build ... ```
+    - ``` ./ build_get_blocks_cpp_demo.sh ```
   - Running the Program
-    - In the same directory
-    - ``` ./dkfd.cpp ```
+    - In the build file
+    - ``` ./get_blocks_cpp_demo.cpp ```
 
 # Demo Video
 
