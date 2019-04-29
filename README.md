@@ -49,6 +49,8 @@ After obtaining the hardware, follow the instructions that came with each part t
   - Building
     - Download the files to a directory and open terminal in that directory
     - ``` ./build ... ```
+  - Running the Program
+    - In the same directory
     - ``` ./dkfd.cpp ```
 
 # Demo Video
