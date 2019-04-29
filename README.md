@@ -50,10 +50,10 @@ After obtaining the hardware, follow the instructions that came with each part t
 - Running the Code
   - Building
     - Download the files to a directory and open terminal in that directory
-    - ``` ./ build_get_blocks_cpp_demo.sh ```
+    - ``` ./pixy2/scripts/build_get_blocks_cpp_demo.sh ```
   - Running the Program
-    - In the build file
-    - ``` ./ get_blocks_cpp_demo.cpp ```
+    - ```cd ./pixy2/build/get_lines_cpp_demo```
+    - ```sudo ./get_blocks_cpp_demo```
 
 # Demo Video
 
