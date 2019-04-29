@@ -48,6 +48,7 @@ After obtaining the hardware, follow the instructions that came with each part t
 - Running the Code
   - Building
     - Download the code to a directory
+    - ``` ./build ... ```
 
 # Demo Video
 
