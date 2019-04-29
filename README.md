@@ -48,7 +48,7 @@ After obtaining the hardware, follow the instructions that came with each part t
   - https://aiyprojects.withgoogle.com/voice-v1/
  
 - mbed LPC1768
-  -
+  - ...
   
 - Running the Code
   - Building
