@@ -46,6 +46,8 @@ After obtaining the hardware, follow the instructions that came with each part t
   - https://aiyprojects.withgoogle.com/voice-v1/
   
 - Running the Code
+  - Building
+    - Download the code to a directory
 
 # Demo Video
 
