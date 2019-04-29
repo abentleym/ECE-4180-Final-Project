@@ -25,6 +25,8 @@ Hardware Used
 - Raspberry Pi
 - Pixy2 Camera
 - AIY Voice Kit (V1)
+- mbed LPC1768
+- Shadow Robot
 
 Software Used
 - Pixymon
