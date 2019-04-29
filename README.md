@@ -53,7 +53,7 @@ After obtaining the hardware, follow the instructions that came with each part t
     - ``` ./ build_get_blocks_cpp_demo.sh ```
   - Running the Program
     - In the build file
-    - ``` ./get_blocks_cpp_demo.cpp ```
+    - ``` ./ get_blocks_cpp_demo.cpp ```
 
 # Demo Video
 
