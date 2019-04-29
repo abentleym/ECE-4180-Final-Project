@@ -10,10 +10,10 @@ Caleb Martinez, Alexander Meyer, and Jongheon Park
 - [Running the Code](README.md#instruction)
 - [Demo Video](README.md#demo-video)
 
-
-
 # Overview
 This project aims to create a stationary robot that can recognize and save color patterns. It uses a Pixy2 camera to process color recognitio, a Raspberry Pi to interface with the Pixy2 and to control the robot's camera rotation, and Google Cloud Assistant API to implement voice control.
+
+![github-medium](structure.jpg)
 
 # State Diagram
 State diagram of the robot
