@@ -60,7 +60,7 @@ After obtaining the hardware, follow the instructions that came with each part t
 
 # Demo Video
 https://youtu.be/vAxhfJvpplg 
-Demo Video of Robot Operations 
+Demo Video of Robot Operations  (Read Discription for information, Volume on)
 
 # Patterns in Demo
 
