@@ -59,7 +59,8 @@ After obtaining the hardware, follow the instructions that came with each part t
     - ```sudo ./get_blocks_cpp_demo```
 
 # Demo Video
-Coming on Wednesday
+https://youtu.be/vAxhfJvpplg 
+Demo Video of Robot Operations 
 
 # Patterns in Demo
 
