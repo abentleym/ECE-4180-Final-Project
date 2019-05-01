@@ -61,3 +61,6 @@ After obtaining the hardware, follow the instructions that came with each part t
 # Demo Video
 Coming on Wednesday
 
+# Patterns in Demo
+
+![github-small] (images/MILES.pdf) 
