@@ -63,4 +63,5 @@ Coming on Wednesday
 
 # Patterns in Demo
 
-Miles (Images/MILES.pdf) 
+Miles ![github-small](Images/MILES-1.jpg) 
+Sam  ![github-small](Images/Sam-1.jpg)
