@@ -4,7 +4,7 @@ ECE 4180 Spring 2019 Final Project
 Caleb Martinez, Alexander Meyer, and Jongheon Park
 # Table of Contents
 - [Overview](README.md#overview)
-- [State Diagram](README.md#state-diagram)
+- [Commands Diagram](README.md#commands-diagram)
 - [Running the Code](README.md#running-the-code)
 - [Parts List](README.md#parts-list)
 - [Running the Code](README.md#instruction)
@@ -15,8 +15,8 @@ This project aims to create a stationary robot that can recognize and save color
 
 ![github-medium](structure.jpg)
 
-# State Diagram
-State diagram of the robot
+# Commands Diagram
+Commands diagram of the robot
 
 ![github-medium](commands.jpg)
 
