@@ -65,3 +65,7 @@ Coming on Wednesday
 
 Miles ![github-small](Images/MILES-1.jpg) 
 Sam  ![github-small](Images/Sam-1.jpg)
+Carlos ![github-small](Images/Carlos-1.jpg)
+Stacey ![github-small](Images/Stacey-1.jpg)
+Self-Naming ![github-small](Images/selfNamingone-1.jpg)
+Self-Naming ![github-small](Images/selfNamingTwo-1.jpg)
