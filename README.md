@@ -18,7 +18,7 @@ This project aims to create a stationary robot that can recognize and save color
 # State Diagram
 State diagram of the robot
 
-![github-medium](commanddiagram.jpg)
+![github-medium](commands.jpg)
 
 # Parts List
 Hardware Used
