@@ -18,7 +18,7 @@ This project aims to create a stationary robot that can recognize and save color
 # State Diagram
 State diagram of the robot
 
-![github-medium](statediagram.jpg)
+![github-medium](commanddiagram.jpg)
 
 # Parts List
 Hardware Used
@@ -47,9 +47,6 @@ After obtaining the hardware, follow the instructions that came with each part t
 - AIY Voice Kit (V1)
   - https://aiyprojects.withgoogle.com/voice-v1/
  
-- mbed LPC1768
-  - ...
-  
 - Running the Code
   - Building
     - Download the files to a directory and open terminal in that directory
